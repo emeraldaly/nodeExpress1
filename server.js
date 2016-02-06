@@ -21,20 +21,20 @@ app.get("/dashboard", function(req, res) {
   res.sendFile(process.cwd() + "/views/dashboard.html")
 });
 
-// app.get('/movies/:movieName', function(req, res) {
-//   omdb.search(req.params.movieName, function(err, movies) {
-//     if(movies.length > 0){
+app.get('/movies/:movieName', function(req, res) {
+  omdb.search(req.params.movieName, function(err, movies) {
+    if(movies.length > 0){
 
-//     var firstMovie = movies[0];
-//   } else {
-//     res.send(404)("not found");
-//   }
+    var firstMovie = movies[0];
+  } else {
+    res.send(404)("not found");
+  }
 
 
-//     res.send(JSON.stringify(firstMovie));
+    res.send(JSON.stringify(firstMovie));
 
-//   });
-// });
+  });
+});
 
 
 //route that accepts github usernames
