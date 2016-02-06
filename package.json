@@ -1,0 +1,29 @@
+{
+  "name": "testdrivenode",
+  "version": "1.0.0",
+  "description": "Node app to practice deploying to heroku",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emeraldaly/nodeExpress1.git"
+  },
+  "keywords": [
+    "node",
+    "js",
+    "heroku"
+  ],
+  "author": "Alyson Wright",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emeraldaly/nodeExpress1/issues"
+  },
+  "homepage": "https://github.com/emeraldaly/nodeExpress1#readme"
+}
