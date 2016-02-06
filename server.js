@@ -43,9 +43,9 @@ app.get("/dashboard", function(req, res) {
 //route that accepts github usernames
 //github api wrapper - to get data back
 app.get('/dashboard/:githubname', function(req, res) {
-  console.log(req, params, githubname)
+  console.log(req.params.githubname)
 github.user.getFrom({
-      user: "emeraldaly"
+      user: req.params.githubname
   }, function(err, gitResponse){
     // console.log(gitResponse);
       res.send(JSON.stringify(gitResponse))
