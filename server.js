@@ -1,6 +1,7 @@
 var express = require('express');
 var omdb = require('omdb');
 var github = require('github');
+var GitHubApi = require('node-github');
 
 var app = express();
 var PORT = process.env.PORT || 8090;
@@ -37,7 +38,8 @@ app.get('/movies/:movieName', function(req, res) {
 
 
 //route that accepts github usernames
-//github ap wrapper
+//github api wrapper
+
 app.listen(PORT, function() {
   console.log("listening on port %s", PORT);
 });
