@@ -1,7 +1,10 @@
 var express = require('express');
-// var omdb = require('omdb');
+var omdb = require('omdb');
 var github = require('github');
 var GitHubApi = require('node-github');
+var github = new GitHubApi({
+    version: "3.0.0"
+    });
 
 var app = express();
 var PORT = process.env.PORT || 8090;
@@ -39,12 +42,15 @@ app.get("/dashboard", function(req, res) {
 
 //route that accepts github usernames
 //github api wrapper - to get data back
-
+app.get('/dashboard/:githubname', function(req, res) {
+  console.log(req, params, githubname)
 github.user.getFrom({
-      user: user
+      user: "emeraldaly"
   }, function(err, gitResponse){
+    // console.log(gitResponse);
       res.send(JSON.stringify(gitResponse))
   });
+});
 
 app.listen(PORT, function() {
   console.log("listening on port %s", PORT);
